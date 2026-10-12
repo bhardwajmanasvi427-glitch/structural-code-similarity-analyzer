@@ -1,0 +1,42 @@
+             model  cv_f1_macro   cv_std  test_seen_acc  test_unseen_acc  test_unseen_f1
+      RandomForest     0.989236 0.004580       0.984722         0.966667        0.966972
+      DecisionTree     0.978146 0.003009       0.984722         0.953333        0.953104
+          SVM(RBF)     0.971860 0.007411       0.979167         0.980000        0.979995
+LogisticRegression     0.959019 0.005671       0.958333         0.913333        0.913314
+
+Selected model: RandomForest
+
+SEEN-algorithm test set (20% split, 720 pairs)
+accuracy = 0.985
+              precision    recall  f1-score   support
+
+         Low      0.987     0.967     0.977       240
+    Moderate      0.967     0.988     0.977       240
+        High      1.000     1.000     1.000       240
+
+    accuracy                          0.985       720
+   macro avg      0.985     0.985     0.985       720
+weighted avg      0.985     0.985     0.985       720
+
+confusion matrix (rows=actual Low/Moderate/High):
+[[232   8   0]
+ [  3 237   0]
+ [  0   0 240]]
+
+UNSEEN-algorithm test set (600 pairs, held-out: selection_sort, gcd, count_char, fizzbuzz, min_of_two)
+accuracy = 0.967
+              precision    recall  f1-score   support
+
+         Low      0.990     0.955     0.972       200
+    Moderate      0.917     0.990     0.952       200
+        High      1.000     0.955     0.977       200
+
+    accuracy                          0.967       600
+   macro avg      0.969     0.967     0.967       600
+weighted avg      0.969     0.967     0.967       600
+
+confusion matrix (rows=actual Low/Moderate/High):
+[[191   9   0]
+ [  2 198   0]
+ [  0   9 191]]
+
